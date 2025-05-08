@@ -118,5 +118,11 @@ int main()
     int nim;
     char ch;
 
+    do
+    {
+        cout << "Menu" << endl;
+        cout << "1 Menambah data kedalam list" << endl;
+    
+    } while ({condition});
     
 };
