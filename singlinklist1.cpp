@@ -30,11 +30,14 @@ class LinkedList
             if (START == NULL || nim <= START->noMhs)
             {
                 if ((START != NULL) && (nim == START->noMhs))
+                {
+                    cout << "\nDuplikat noMhs tidak diijinkan\n";
+                    return;
+                }
+                nodeBaru->next = START;
+                START = nodeBaru;
                 return;
             }
-            nodeBaru->next = START;
-            START = nodeBaru;
-            return;
         }
 
         Node *previous = START;
@@ -66,6 +69,22 @@ class LinkedList
                 *previous = *current;
                 *current = (*current)->next;
             }
+            return (*current !=NULL);
+        }
+
+        bool delNode(int nim)
+        {
+            Node *current, *previous;
+            if (!Search(nim, &previous, &current))
+                return false;
+
+            if (current == START)
+                START = START->next;
+            else
+                previous->next = current->next;
+
+            delete current;
+            return true;
         }
 };
 
