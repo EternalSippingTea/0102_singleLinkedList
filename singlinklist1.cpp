@@ -112,6 +112,11 @@ class LinkedList
 };
 
 
-int main() {
+int main() 
+{
+    LinkedList mhs;
+    int nim;
+    char ch;
 
+    
 };
